@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA Calendar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- LOGIN PAGE -->
+    <main id="login-page" data-testid="login-page" class="page">
+        <section class="login-container">
+            <h1>QA Calendar</h1>
+            <p class="subtitle">Sign in to manage your events</p>
+
+            <form id="login-form">
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input
+                        id="username"
+                        data-testid="username-input"
+                        type="text"
+                        placeholder="Enter username"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        id="password"
+                        data-testid="password-input"
+                        type="password"
+                        placeholder="Enter password"
+                    >
+                </div>
+
+                <button
+                    id="login-button"
+                    data-testid="login-button"
+                    type="submit"
+                >
+                    Login
+                </button>
+
+                <div
+                    id="login-error"
+                    data-testid="login-error"
+                    class="error-message hidden"
+                ></div>
+
+            </form>
+        </section>
+    </main>
+
+
+    <!-- CALENDAR PAGE -->
+    <main id="calendar-page" data-testid="calendar-page" class="page hidden">
+
+        <header class="calendar-header">
+
+            <div>
+                <h1>QA Calendar</h1>
+                <p>Event Management</p>
+            </div>
+
+            <button
+                id="logout-button"
+                data-testid="logout-button"
+                class="secondary-button"
+            >
+                Logout
+            </button>
+
+        </header>
+
+
+        <section class="calendar-container">
+
+            <div class="calendar-toolbar">
+
+                <button
+                    id="previous-month"
+                    data-testid="previous-month"
+                    class="secondary-button"
+                >
+                    ? Previous
+                </button>
+
+                <h2
+                    id="current-month"
+                    data-testid="current-month"
+                ></h2>
+
+                <button
+                    id="next-month"
+                    data-testid="next-month"
+                    class="secondary-button"
+                >
+                    Next ?
+                </button>
+
+            </div>
+
+
+            <div class="calendar-actions">
+
+                <button
+                    id="add-event-button"
+                    data-testid="add-event-button"
+                >
+                    + Add Event
+                </button>
+
+            </div>
+
+
+            <div class="calendar">
+
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+
+                <div
+                    id="calendar-days"
+                    data-testid="calendar-days"
+                    class="calendar-days"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- EVENT MODAL -->
+    <div
+        id="event-modal"
+        data-testid="event-modal"
+        class="modal hidden"
+    >
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 id="modal-title">Add Event</h2>
+
+                <button
+                    id="close-modal"
+                    data-testid="close-modal"
+                    class="close-button"
+                    type="button"
+                >
+                    ×
+                </button>
+            </div>
+
+
+            <form id="event-form">
+
+                <input
+                    type="hidden"
+                    id="event-id"
+                >
+
+                <div class="form-group">
+
+                    <label for="event-title">
+                        Event Title
+                    </label>
+
+                    <input
+                        id="event-title"
+                        data-testid="event-title"
+                        type="text"
+                        placeholder="Enter event title"
+                    >
+
+                    <div
+                        id="title-error"
+                        data-testid="title-error"
+                        class="field-error hidden"
+                    >
+                        Event title is required.
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="event-date">
+                        Event Date
+                    </label>
+
+                    <input
+                        id="event-date"
+                        data-testid="event-date"
+                        type="date"
+                    >
+
+                    <div
+                        id="date-error"
+                        data-testid="date-error"
+                        class="field-error hidden"
+                    >
+                        Event date is required.
+                    </div>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        id="cancel-event"
+                        data-testid="cancel-event"
+                        type="button"
+                        class="secondary-button"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        id="save-event"
+                        data-testid="save-event"
+                        type="submit"
+                    >
+                        Save Event
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
